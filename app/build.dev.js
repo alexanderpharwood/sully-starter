@@ -61,22 +61,6 @@ Sully.registerRoute({
 
          }
 
-         this.gettingStarted = function (request) {
-
-             return Sully.renderView({
-
-                 template: Sully.getViewTemplate("getting-started"),
-
-                 data: request,
-
-                 viewDidLoad: function () {
-
-                 }
-
-             });
-
-         }
-
  }
 
 Sully.registerController('index', new IndexController());
