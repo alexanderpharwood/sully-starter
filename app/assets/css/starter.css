@@ -1,0 +1,82 @@
+/**
+ * Sully basic css
+ *
+ */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: none;
+}
+
+html{
+    position: relative;
+    width: 100%;
+    min-height: 100% !important;
+}
+
+body {
+    width: 100%;
+    min-height: 100% !important;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    background: #4776E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.landing-logo{
+    width: 300px;
+}
+
+.landing-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+
+.landing-center h1{
+    font-size: 50px;
+}
+
+.sully.header {
+    height: 80px;
+    padding: 20px;
+}
+
+.sully.header .brand{
+    float: left;
+    color: white;
+}
+
+.sully.header .brand img{
+    width: 100px;
+}
+
+.sully.header.sticky {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%
+}

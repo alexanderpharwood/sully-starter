@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/Sully/starter-project/">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sully.js Starter Project</title>
+
+    <!-- Custom styles for this template -->
+    <link href="app/assets/css/starter.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+
+
+<body>
+
+    <div id="Sully"></div>
+
+    <script src="vendor/sully/sully-1.0.0.min.js"></script>
+    <script src="app/build.dev.js"></script>
+
+    <script>
+
+        window.onload = function(){
+
+            Sully.init({
+                container: "Sully",
+                basePath: "/Sully/starter-project/",
+                routingMethod: "HISTORY",
+                exceptionMessage: " ¯\\_(ツ)_/¯<br>Oops, we've had a spillage!",
+                //interceptAnchorWithClass: 'link'
+            });
+
+        };
+
+    </script>
+</body>
+
+</html>

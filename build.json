@@ -1,0 +1,21 @@
+{
+    "builds": {
+        "production": {
+            "output": "app/build.prod.js"
+        },
+        "development": {
+            "output": "app/build.dev.js"
+        }
+    },
+    "router": "app/router.js",
+    "controllers": {
+        "index": "app/controllers/indexController.js",
+        "error": "app/controllers/errorController.js"
+    },
+    "views": {
+        "header": "app/views/common/header.html",
+        "404": "app/views/404.html",
+        "index": "app/views/index.html",
+        "getting-started": "app/views/getting-started.html"
+    }
+}
