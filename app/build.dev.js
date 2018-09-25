@@ -89,7 +89,7 @@ Sully.registerController('error', new ErrorController());
 
 Sully.registerView('header', '<div class="sully header sticky" id="view-header">    <div class="brand">        <img class="landing-logo" src="app/assets/images/logo.svg">    </div></div>');
 
-Sully.registerView('index', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <h1>Looks good to me 👍</h1>        <p>Sully is ready to go, now make something spectacular!</p>    </div></div>');
+Sully.registerView('index', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <h1>It&apos;s all looking good!</h1>        <h1>🎉</h1>        <p>Sully is ready to go, now make something spectacular!</p>    </div></div>');
 
 Sully.registerView('getting-started', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <img class="landing-logo" src="app/assets/images/logo.svg">        <p>You&apos;re all set!</p>        <pre class="npm">$ npm i sully -g</pre>        <a href="/getting-started" class="btn btn-outline-light">Getting started</a>    </div></div>');
 
