@@ -45,13 +45,7 @@ Sully.registerRoute({
     controller: 'index',
     method: 'gettingStarted'
 });
-/**
- * Register a controller.
- * @param string Controller name
- * @param object The controller -- an object of methods.
- */
-
- function IndexController(){
+function IndexController(){
 
          this.constructor = function(request){
 
@@ -59,7 +53,6 @@ Sully.registerRoute({
 
          this.index = function (request) {
 
-             //Do your data manipulation here
              return Sully.serveView("index");
 
          }
@@ -67,7 +60,6 @@ Sully.registerRoute({
  }
 
 Sully.registerController('index', new IndexController());
-
 
 function ErrorController(){
 
@@ -90,7 +82,7 @@ Sully.registerView('403', '{{view:header}}<div id="view-404">    <div class="lan
 
 Sully.registerView('404', '{{view:header}}<div id="view-403">    <div class="landing-center text-center">        <h1><i>Whoops!</i> You shouldn&apos;t be here: 403.</h1>    </div></div>');
 
-Sully.registerView('header', '<div class="sully header sticky" id="view-header">    <div class="brand">        <img class="landing-logo" src="app/assets/images/logo.svg">    </div></div>');
+Sully.registerView('header', '<div class="sully header sticky" id="view-header">    <div class="brand">        <img class="landing-logo" src="app/assets/images/logo-white.svg">    </div></div>');
 
 Sully.registerView('index', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <h1>It&apos;s all looking good!</h1>        <h1>🎉</h1>        <p>Sully is ready to go, now make something spectacular!</p>    </div></div>');
 
