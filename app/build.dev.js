@@ -1,4 +1,4 @@
-/**
+(function(){/**
  * Sully router
  * Note: all routes should have a preceding slash.
  */
@@ -17,6 +17,21 @@ Sully.registerNotFound('error', '404');
  * @param object {name, uri, controller, method, [middleware]}.
  */
 
+
+ Sully.registerRoute({
+     name: '404',
+     route: '/404',
+     controller: 'error',
+     method: '404',
+ });
+
+ Sully.registerRoute({
+     name: '403',
+     route: '/403',
+     controller: 'error',
+     method: '403',
+ });
+
 Sully.registerRoute({
     name: 'index',
     route: '/',
@@ -30,7 +45,7 @@ Sully.registerRoute({
     controller: 'index',
     method: 'gettingStarted'
 });
-(function(){/**
+/**
  * Register a controller.
  * @param string Controller name
  * @param object The controller -- an object of methods.
@@ -45,19 +60,7 @@ Sully.registerRoute({
          this.index = function (request) {
 
              //Do your data manipulation here
-             return Sully.renderView({
-
-                 template: Sully.getViewTemplate("index"),
-
-                 data: request,
-
-                 viewDidLoad: function () {
-
-                     //Do your DOM manipulation here
-
-                 }
-
-             });
+             return Sully.serveView("index");
 
          }
 
@@ -70,22 +73,22 @@ function ErrorController(){
 
     this['404'] = function () {
 
-        return Sully.renderView({
+        return Sully.serveView("404");
 
-            template: template = Sully.getViewTemplate("404"),
+    };
 
-            viewDidLoad: function () {
+    this['403'] = function () {
 
-            }
+        return Sully.serveView('403');
 
-        });
-
-    }
+    };
 
 }
 
 Sully.registerController('error', new ErrorController());
-})();(function(){Sully.registerView('404', '{{view:header}}<div id="view-404">    <div class="landing-center text-center">        <h1><i>Whoops!</i> That doesn&apos;t look right: 404.</h1>    </div></div>');
+Sully.registerView('403', '{{view:header}}<div id="view-404">    <div class="landing-center text-center">        <h1><i>Whoops!</i> That doesn&apos;t look right: 404.</h1>    </div></div>');
+
+Sully.registerView('404', '{{view:header}}<div id="view-403">    <div class="landing-center text-center">        <h1><i>Whoops!</i> You shouldn&apos;t be here: 403.</h1>    </div></div>');
 
 Sully.registerView('header', '<div class="sully header sticky" id="view-header">    <div class="brand">        <img class="landing-logo" src="app/assets/images/logo.svg">    </div></div>');
 
