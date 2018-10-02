@@ -1,22 +1,24 @@
 {
     "builds": {
         "production": {
-            "output": "app/build.prod.js"
+            "output": "app/build/build.prod.js"
         },
         "development": {
-            "output": "app/build.dev.js"
+            "output": "app/build/build.dev.js"
         }
     },
     "router": "app/router.js",
     "controllers": {
-        "index": "app/controllers/indexController.js",
-        "error": "app/controllers/errorController.js"
+        "index": "app/controllers/IndexController.js",
+        "error": "app/controllers/ErrorController.js"
     },
     "views": {
         "header": "app/views/common/header.html",
         "404": "app/views/404.html",
         "403": "app/views/403.html",
-        "index": "app/views/index.html",
-        "getting-started": "app/views/getting-started.html"
+        "index": "app/views/index.html"
+    },
+    "middleware": {
+        "example": "app/middleware/ExampleMiddleware.js"
     }
 }
