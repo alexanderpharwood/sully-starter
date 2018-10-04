@@ -143,18 +143,7 @@
 
         }
 
-        //Have a method that checks whether the url is a html5 one or a hash one.
-        function checkUrlType(){
-
-            var url = window.location.href;
-
-            return url;
-
-        }
-
         function routeFromUrl() {
-
-            console.log(checkUrlType());
 
             var isValidRoute = false;
 
