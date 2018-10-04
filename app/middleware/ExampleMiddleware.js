@@ -1,9 +1,7 @@
 function ExampleMiddleware(){
 
         this.run = function (request) {
-
             //
-
         }
 
 }

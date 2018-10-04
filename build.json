@@ -20,5 +20,9 @@
     },
     "middleware": {
         "example": "app/middleware/ExampleMiddleware.js"
-    }
+    },
+    "serveIgnoreRoutePaths": [
+        "vendor",
+        "app"
+    ]
 }

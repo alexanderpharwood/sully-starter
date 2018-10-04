@@ -17,7 +17,6 @@ Sully.registerNotFound('error', '404');
  * @param object {name, uri, controller, method, [middleware]}.
  */
 
-
  Sully.registerRoute({
      name: '404',
      route: '/404',
@@ -38,24 +37,13 @@ Sully.registerRoute({
     controller: 'index',
     method: 'index',
 });
-
-Sully.registerRoute({
-    name: 'getting-started',
-    route: '/getting-started',
-    controller: 'index',
-    method: 'gettingStarted'
-});
 function IndexController(){
 
     this.constructor = function(request){
-
-        request.test = true;
-
+        //
     }
 
     this.index = function (request) {
-
-        console.log(request);
 
         return Sully.serveView("index");
 
@@ -66,12 +54,6 @@ function IndexController(){
 Sully.registerController('index', new IndexController());
 
 function ErrorController(){
-
-    this.constructor = function(request){
-
-        console.log(request);
-
-    }
 
     this['404'] = function () {
 
@@ -91,9 +73,7 @@ Sully.registerController('error', new ErrorController());
 function ExampleMiddleware(){
 
         this.run = function (request) {
-
             //
-
         }
 
 }

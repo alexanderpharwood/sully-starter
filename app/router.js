@@ -17,7 +17,6 @@ Sully.registerNotFound('error', '404');
  * @param object {name, uri, controller, method, [middleware]}.
  */
 
-
  Sully.registerRoute({
      name: '404',
      route: '/404',
@@ -37,11 +36,4 @@ Sully.registerRoute({
     route: '/',
     controller: 'index',
     method: 'index',
-});
-
-Sully.registerRoute({
-    name: 'getting-started',
-    route: '/getting-started',
-    controller: 'index',
-    method: 'gettingStarted'
 });
