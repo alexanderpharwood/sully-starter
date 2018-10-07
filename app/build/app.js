@@ -1,35 +1,18 @@
-(function(){/**
- * Sully router
- * Note: all routes should have a preceding slash.
- */
+(function(){Sully.registerNotFound('error', '404');
 
+Sully.registerRoute({
+    name: '404',
+    route: '/404',
+    controller: 'error',
+    method: '404',
+});
 
-/**
- * Register the controller and method to use when a route is not found (404).
- * @param string Controller name
- * @param string Method name
- */
-Sully.registerNotFound('error', '404');
-
-/**
- * Register a route
- * Routes will be matched in the order they are set.
- * @param object {name, uri, controller, method, [middleware]}.
- */
-
- Sully.registerRoute({
-     name: '404',
-     route: '/404',
-     controller: 'error',
-     method: '404',
- });
-
- Sully.registerRoute({
-     name: '403',
-     route: '/403',
-     controller: 'error',
-     method: '403',
- });
+Sully.registerRoute({
+    name: '403',
+    route: '/403',
+    controller: 'error',
+    method: '403',
+});
 
 Sully.registerRoute({
     name: 'index',
@@ -46,6 +29,18 @@ function IndexController(){
     this.index = function (request) {
 
         return Sully.serveView("index");
+
+    }
+
+    this.test = function (request) {
+
+        return Sully.serveView("test");
+
+    }
+
+    this.experiment = function (request) {
+
+        return console.log(request);
 
     }
 
@@ -85,6 +80,14 @@ Sully.registerView('404', '{{view:header}}<div id="view-404">    <div class="lan
 
 Sully.registerView('header', '<div class="sully header sticky" id="view-header">    <div class="brand">        <img class="landing-logo" src="app/assets/images/logo-white.svg">    </div></div>');
 
-Sully.registerView('index', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <h1>It&apos;s all looking good!</h1>        <h1>🎉</h1>        <p>Sully is ready to go, now make make something spectacular!</p>        <p>The <a href="https://sullyjs.org/docs" target="_blank" class="no-route-catch">docs are here</a> if you need them...</p>    </div></div>');
+Sully.registerView('index', '{{view:header}}<div id="view-index">    <div class="landing-center text-center">        <h1>It&apos;s all looking good!</h1>        <h1>🎉</h1>        <p>Sully is ready for you, but are you ready for Sully?</p>        <p>The <a href="https://sullyjs.org/docs" target="_blank" class="no-route-catch">docs are here</a> if you need them...</p>    </div></div>');
 
+window.onload = function(){
+
+    Sully.init({
+        container: "Sully",
+        exceptionMessage: "Oops, we've had a spillage!",
+    });
+
+};
 })();

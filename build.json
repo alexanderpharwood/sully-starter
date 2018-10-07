@@ -1,28 +1,45 @@
 {
-    "builds": {
-        "production": {
-            "output": "app/build/build.prod.js"
+    "app": {
+        "name": "Starter",
+        "version": "1.0.0"
+    },
+    "build": {
+        "output": "app/build/app.js",
+        "scripts": [
+            "scripts/entry.js"
+        ],
+        "router": "router.js",
+        "controllers": {
+            "index": "controllers/IndexController.js",
+            "error": "controllers/ErrorController.js"
         },
-        "development": {
-            "output": "app/build/build.dev.js"
+        "views": {
+            "header": "views/common/header.html",
+            "404": "views/404.html",
+            "403": "views/403.html",
+            "index": "views/index.html"
+        },
+        "middleware": {
+            "example": "middleware/ExampleMiddleware.js"
         }
     },
-    "router": "app/router.js",
-    "controllers": {
-        "index": "app/controllers/IndexController.js",
-        "error": "app/controllers/ErrorController.js"
+    "serve": {
+        "staticPaths": [
+            "app"
+        ],
+        "port": 3000
     },
-    "views": {
-        "header": "app/views/common/header.html",
-        "404": "app/views/404.html",
-        "403": "app/views/403.html",
-        "index": "app/views/index.html"
+    "autobuilder": {
+        "path": "",
+        "ignore": [
+            "app/build"
+        ]
     },
-    "middleware": {
-        "example": "app/middleware/ExampleMiddleware.js"
-    },
-    "serveIgnoreRoutePaths": [
-        "vendor",
-        "app"
-    ]
+    "release": {
+        "version": "1.0.0",
+        "include": [
+            "index.html",
+            "app"
+        ]
+    }
 }

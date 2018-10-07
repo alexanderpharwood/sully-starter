@@ -95,17 +95,29 @@
 
         }
 
+        function getHtml5RouteFromUrl(){
+
+            return window.location.pathname.replace(Sully.basePath, '');
+
+        }
+
+        function getHashRouteFromUrl(){
+
+            return window.location.hash.substr(1, window.location.hash.length);
+
+        }
+
         function getRouteFromUrl() {
 
             var route;
 
             if(Sully.html5Routing){
 
-                route = window.location.pathname.replace(Sully.basePath, '');
+                return getHtml5RouteFromUrl();
 
             } else {
 
-                route = window.location.hash.substr(1, window.location.hash.length);
+                return getHashRouteFromUrl();
 
             }
 
@@ -150,6 +162,28 @@
             var routeParams = {};
 
             routeParams.route = getRouteFromUrl();
+
+            if (!Sully.html5Routing){
+
+                if (getHashRouteFromUrl() === "" && getHtml5RouteFromUrl() !== ""){
+
+                    var hashRoute = "#/" + getHtml5RouteFromUrl();
+
+                    return window.location.replace(window.location.origin + getBasePath(hashRoute));
+
+                }
+
+            } else {
+
+                if (getHashRouteFromUrl() !== "" && getHtml5RouteFromUrl() === ""){
+
+                    var html5Route = "/" + getHashRouteFromUrl();
+
+                    return window.location.replace(window.location.origin + getBasePath(html5Route));
+
+                }
+
+            }
 
             routeParams.request = {};
 
